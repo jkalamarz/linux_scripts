@@ -27,12 +27,12 @@ sleep 1800
 
 kill $PID
 
-echo ln -s '"'$FOLDER/../subdir.php'"' '"'$FOLDER/index.php'"'
-[ -f "$FOLDER/index.php" ] || ln -s "$FOLDER/../subdir.php" "$FOLDER/index.php"
+echo ln -s ../subdir.php '"'$FOLDER/index.php'"'
+[ -f "$FOLDER/index.php" ] || ln -s ../subdir.php "$FOLDER/index.php"
 
 
-echo ffmpeg '-i' $FOLDER/$TIME.ogg -b:a 256k '"'$FOLDER/${TIME}_$TITLE.mp3'"'
-ffmpeg -i $FOLDER/$TIME.ogg -b:a 256k "$FOLDER/${TIME}_$TITLE.mp3"
+echo ffmpeg '-i' $FOLDER/$TIME.ogg -b:a 192k '"'$FOLDER/${TIME}_$TITLE.mp3'"'
+ffmpeg -i $FOLDER/$TIME.ogg -b:a 192k "$FOLDER/${TIME}_$TITLE.mp3"
 
 echo rm $FOLDER/$TIME.ogg 
 rm $FOLDER/$TIME.ogg 
